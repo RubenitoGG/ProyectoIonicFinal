@@ -1,0 +1,31 @@
+<!--
+  Generated template for the ConfUserPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>MyConfiguration</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+  <h1>
+    <ion-input value={{username}} readonly text-center></ion-input>
+  </h1>
+    <ion-input value={{content}} readonly text-center></ion-input>
+    <button (click)='editInformation()' block ion-button>
+      Create sentence
+    </button>
+    <button block ion-button (click)='changePass()'>
+      Change password
+    </button>
+    <button color="danger" block ion-button (click)="exit()">
+      Log out
+    </button>
+</ion-content>

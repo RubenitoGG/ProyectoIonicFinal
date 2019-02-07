@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar hideBackButton color="primary" text-center>
+    <ion-title>MyNotes</ion-title>
+    <ion-buttons left>
+      <button ion-button (click)="editUser()">
+        <ion-icon name="cog"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right>
+      <button ion-button (click)='goFriends()'>
+        <ion-icon name="contacts"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <div *ngFor="let nota of notas | async">
+    <ion-item *ngIf="nota.userKey == this.key" (click)="editNote(nota)">
+        <h1>
+          <b>{{nota.title}}</b>
+        </h1>
+        <h3>
+          {{nota.subtitle}}
+        </h3>
+    </ion-item>
+  </div>
+  </ion-list>
+  <button (click)="newNote()" ion-button block color="light">
+    <ion-icon name="add-circle"></ion-icon>
+  </button>
+</ion-content>
